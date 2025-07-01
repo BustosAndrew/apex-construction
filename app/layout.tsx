@@ -5,9 +5,17 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Apex Concrete Construction Services | Custom Home Builder & Remodeling',
-  description: 'A full service custom home builder and remodeling company specializing in providing families beautiful and functional spaces that last for generations.',
-  keywords: ['construction', 'home builder', 'remodeling', 'custom homes', 'apex concrete'],
+  title:
+    'Apex Concrete Construction Services | Custom Home Builder & Remodeling',
+  description:
+    'A full service custom home builder and remodeling company specializing in providing families beautiful and functional spaces that last for generations.',
+  keywords: [
+    'construction',
+    'home builder',
+    'remodeling',
+    'custom homes',
+    'apex concrete',
+  ],
   authors: [{ name: 'Apex Concrete Construction Services' }],
   creator: 'Apex Concrete Construction Services',
   publisher: 'Apex Concrete Construction Services',
@@ -21,8 +29,10 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Apex Concrete Construction Services | Custom Home Builder & Remodeling',
-    description: 'A full service custom home builder and remodeling company specializing in providing families beautiful and functional spaces that last for generations.',
+    title:
+      'Apex Concrete Construction Services | Custom Home Builder & Remodeling',
+    description:
+      'A full service custom home builder and remodeling company specializing in providing families beautiful and functional spaces that last for generations.',
     url: 'https://apexconcreteconstruction.com',
     siteName: 'Apex Concrete Construction Services',
     images: [
@@ -38,8 +48,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Apex Concrete Construction Services | Custom Home Builder & Remodeling',
-    description: 'A full service custom home builder and remodeling company specializing in providing families beautiful and functional spaces that last for generations.',
+    title:
+      'Apex Concrete Construction Services | Custom Home Builder & Remodeling',
+    description:
+      'A full service custom home builder and remodeling company specializing in providing families beautiful and functional spaces that last for generations.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -64,13 +76,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel='icon' href='/favicon.ico' />
+        <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
+        <link rel='manifest' href='/manifest.webmanifest' />
         <script
-          type="application/ld+json"
+          type='application/ld+json'
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org/',
@@ -78,7 +90,8 @@ export default function RootLayout({
               name: 'Apex Concrete Construction Services',
               url: 'https://apexconcreteconstruction.com',
               logo: 'https://apexconcreteconstruction.com/logo.png',
-              description: 'A full service custom home builder and remodeling company specializing in providing families beautiful and functional spaces that last for generations.',
+              description:
+                'A full service custom home builder and remodeling company specializing in providing families beautiful and functional spaces that last for generations.',
               address: {
                 '@type': 'PostalAddress',
                 addressCountry: 'US',
