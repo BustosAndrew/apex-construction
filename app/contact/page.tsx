@@ -274,13 +274,6 @@ export default function ContactPage() {
                     </motion.div>
                   ))}
                 </div>
-
-                {/* Map placeholder */}
-                <div className="mt-8">
-                  <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                    <p className="text-gray-500">Map Integration</p>
-                  </div>
-                </div>
               </div>
             </motion.div>
           </div>
