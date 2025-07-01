@@ -94,7 +94,7 @@ export default function FeaturedProjects() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <Button size="lg" variant="outline" className="text-red-300 border-white hover:bg-white hover:text-gray-900" asChild>
+          <Button size="lg" variant="outline" className="text-black border-white hover:bg-white hover:text-gray-200" asChild>
             <Link href="/projects">
               View All Projects
               <ArrowRight className="ml-2 h-5 w-5" />
