@@ -56,9 +56,9 @@ export default function CTASection() {
                 <Phone className="h-5 w-5 mr-2" />
                 (555) 123-4567
               </a>
-              <a href="mailto:info@apexconcrete.com" className="flex items-center hover:text-primary transition-colors">
+              <a href="mailto:renzoherrera217@gmail.com" className="flex items-center hover:text-primary transition-colors">
                 <Mail className="h-5 w-5 mr-2" />
-                info@apexconcrete.com
+                renzoherrera217@gmail.com
               </a>
             </div>
           </motion.div>

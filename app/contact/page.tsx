@@ -27,6 +27,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [submitError, setSubmitError] = useState('');
 
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
@@ -44,11 +45,30 @@ export default function ContactPage() {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setSubmitMessage('Thank you for your message! We\'ll get back to you soon.');
-    setIsSubmitting(false);
-    reset();
+    setSubmitMessage('');
+    setSubmitError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSubmitMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
+        reset();
+      } else {
+        const errorData = await response.json();
+        setSubmitError(errorData.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      setSubmitError('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -61,8 +81,8 @@ export default function ContactPage() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'info@apexconcrete.com',
-      link: 'mailto:info@apexconcrete.com'
+      value: 'renzoherrera217@gmail.com',
+      link: 'mailto:renzoherrera217@gmail.com'
     },
     {
       icon: MapPin,
@@ -100,7 +120,7 @@ export default function ContactPage() {
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Ready to start your dream project? Get in touch with our team today.
+              Ready to start your concrete construction project? Get in touch with our team today.
             </motion.p>
           </div>
         </div>
@@ -166,11 +186,12 @@ export default function ContactPage() {
                           {...register('projectType')}
                         >
                           <option value="">Select Project Type</option>
-                          <option value="new-construction">New Construction</option>
-                          <option value="remodeling">Remodeling</option>
-                          <option value="addition">Home Addition</option>
-                          <option value="renovation">Renovation</option>
-                          <option value="consultation">Design Consultation</option>
+                          <option value="foundation">Foundation Construction</option>
+                          <option value="driveway">Driveway & Walkways</option>
+                          <option value="patio">Patio & Outdoor Spaces</option>
+                          <option value="decorative">Decorative Concrete</option>
+                          <option value="repair">Concrete Repair</option>
+                          <option value="consultation">Consultation</option>
                         </select>
                         {errors.projectType && (
                           <p className="text-red-500 text-sm mt-1">{errors.projectType.message}</p>
@@ -180,7 +201,7 @@ export default function ContactPage() {
 
                     <div>
                       <Textarea
-                        placeholder="Tell us about your project..."
+                        placeholder="Tell us about your concrete project..."
                         rows={6}
                         {...register('message')}
                         className={errors.message ? 'border-red-500' : ''}
@@ -203,6 +224,10 @@ export default function ContactPage() {
                     {submitMessage && (
                       <p className="text-green-600 text-center font-medium">{submitMessage}</p>
                     )}
+
+                    {submitError && (
+                      <p className="text-red-600 text-center font-medium">{submitError}</p>
+                    )}
                   </form>
                 </CardContent>
               </Card>
@@ -218,7 +243,7 @@ export default function ContactPage() {
                 <div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
                   <p className="text-lg text-gray-600">
-                    Ready to transform your space? Contact us today to discuss your project and schedule a consultation.
+                    Ready to transform your property with professional concrete construction? Contact us today to discuss your project and schedule a consultation.
                   </p>
                 </div>
 

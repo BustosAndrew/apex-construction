@@ -73,8 +73,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
-                <a href="mailto:info@apexconcrete.com" className="text-gray-400 hover:text-white transition-colors">
-                  info@apexconcrete.com
+                <a href="mailto:renzoherrera217@gmail.com" className="text-gray-400 hover:text-white transition-colors">
+                  renzoherrera217@gmail.com
                 </a>
               </div>
             </div>
