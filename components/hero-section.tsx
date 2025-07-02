@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className='absolute inset-0 z-0'>
         <div className='absolute inset-0 bg-black/40 z-10' />
         <img
-          src='https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop'
+          src='/home.png'
           alt='Concrete construction work in progress'
           className='w-full h-full object-cover'
         />
@@ -38,10 +38,11 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Expert concrete construction services for residential homes. From
-            foundations and driveways to patios and decorative concrete, we
-            deliver durable solutions that enhance your property's value and
-            beauty.
+            Apex Concrete is a leading provider of expert concrete services,
+            known for strength, reliability, and craftsmanship. From driveways
+            and slabs to large-scale structural work, we bring decades of
+            experience and a commitment to excellence to every job. Your vision,
+            our foundation.
           </motion.p>
 
           <motion.div

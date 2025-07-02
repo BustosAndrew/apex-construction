@@ -10,6 +10,7 @@ import {
   Twitter,
 } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -19,9 +20,13 @@ export default function Footer() {
           {/* Company Info */}
           <div className='space-y-4'>
             <div className='flex items-center space-x-2'>
-              <div className='p-2 bg-primary rounded-full'>
-                <Hammer className='h-6 w-6 text-white' />
-              </div>
+              <Image
+                src={'/logo.png'}
+                alt='Apex Concrete Logo'
+                width={40}
+                height={40}
+                className='h-10 w-10'
+              />
               <span className='text-xl font-bold'>APEX CONCRETE</span>
             </div>
             <p className='text-gray-400 leading-relaxed'>
@@ -29,7 +34,7 @@ export default function Footer() {
               properties. Building solid foundations and beautiful concrete
               solutions that last for generations.
             </p>
-            <div className='flex space-x-4'>
+            {/* <div className='flex space-x-4'>
               <a
                 href='#'
                 className='text-gray-400 hover:text-primary transition-colors'
@@ -42,13 +47,7 @@ export default function Footer() {
               >
                 <Instagram className='h-5 w-5' />
               </a>
-              <a
-                href='#'
-                className='text-gray-400 hover:text-primary transition-colors'
-              >
-                <Twitter className='h-5 w-5' />
-              </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Services */}
@@ -130,7 +129,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          {/* <div>
             <h3 className='text-lg font-semibold mb-4'>Contact</h3>
             <div className='space-y-3'>
               <div className='flex items-start space-x-3'>
@@ -159,7 +158,7 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className='border-t border-gray-800 mt-12 pt-8 text-center text-gray-400'>

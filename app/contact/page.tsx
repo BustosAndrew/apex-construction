@@ -39,7 +39,12 @@ export default function ContactPage() {
     threshold: 0.1,
   });
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormData>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
   });
 
@@ -58,11 +63,15 @@ export default function ContactPage() {
       });
 
       if (response.ok) {
-        setSubmitMessage('Thank you for your message! We\'ll get back to you within 24 hours.');
+        setSubmitMessage(
+          "Thank you for your message! We'll get back to you within 24 hours.",
+        );
         reset();
       } else {
         const errorData = await response.json();
-        setSubmitError(errorData.error || 'Failed to send message. Please try again.');
+        setSubmitError(
+          errorData.error || 'Failed to send message. Please try again.',
+        );
       }
     } catch (error) {
       setSubmitError('Failed to send message. Please try again.');
@@ -73,41 +82,23 @@ export default function ContactPage() {
 
   const contactInfo = [
     {
-      icon: Phone,
-      title: 'Phone',
-      value: '(555) 123-4567',
-      link: 'tel:+1-555-123-4567'
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      value: 'renzoherrera217@gmail.com',
-      link: 'mailto:renzoherrera217@gmail.com'
-    },
-    {
-      icon: MapPin,
-      title: 'Address',
-      value: '123 Construction Ave, Building City, ST 12345',
-      link: '#'
-    },
-    {
       icon: Clock,
       title: 'Hours',
-      value: 'Mon-Fri: 8AM-6PM, Sat: 9AM-4PM',
-      link: '#'
-    }
+      value: 'Fri-Sun: 8AM-6PM',
+      link: '#',
+    },
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className='min-h-screen'>
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gray-900 text-white" ref={heroRef}>
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+      <section className='pt-20 pb-16 bg-gray-900 text-white' ref={heroRef}>
+        <div className='container mx-auto px-4 lg:px-8'>
+          <div className='max-w-4xl mx-auto text-center'>
             <motion.h1
-              className="text-4xl md:text-5xl font-bold mb-6"
+              className='text-4xl md:text-5xl font-bold mb-6'
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8 }}
@@ -115,118 +106,139 @@ export default function ContactPage() {
               Contact Us
             </motion.h1>
             <motion.p
-              className="text-xl text-gray-300 mb-8"
+              className='text-xl text-gray-300 mb-8'
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Ready to start your concrete construction project? Get in touch with our team today.
+              Ready to start your concrete construction project? Get in touch
+              with our team today.
             </motion.p>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20" ref={formRef}>
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className='py-20' ref={formRef}>
+        <div className='container mx-auto px-4 lg:px-8'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={formInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8 }}
             >
-              <Card className="shadow-lg">
+              <Card className='shadow-lg'>
                 <CardHeader>
-                  <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+                  <CardTitle className='text-2xl'>Send Us a Message</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <form onSubmit={handleSubmit(onSubmit)} className='space-y-6'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                       <div>
                         <Input
-                          placeholder="Your Name"
+                          placeholder='Your Name'
                           {...register('name')}
                           className={errors.name ? 'border-red-500' : ''}
                         />
                         {errors.name && (
-                          <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                          <p className='text-red-500 text-sm mt-1'>
+                            {errors.name.message}
+                          </p>
                         )}
                       </div>
                       <div>
                         <Input
-                          type="email"
-                          placeholder="Your Email"
+                          type='email'
+                          placeholder='Your Email'
                           {...register('email')}
                           className={errors.email ? 'border-red-500' : ''}
                         />
                         {errors.email && (
-                          <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                          <p className='text-red-500 text-sm mt-1'>
+                            {errors.email.message}
+                          </p>
                         )}
                       </div>
                     </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                       <div>
                         <Input
-                          type="tel"
-                          placeholder="Your Phone"
+                          type='tel'
+                          placeholder='Your Phone'
                           {...register('phone')}
                           className={errors.phone ? 'border-red-500' : ''}
                         />
                         {errors.phone && (
-                          <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+                          <p className='text-red-500 text-sm mt-1'>
+                            {errors.phone.message}
+                          </p>
                         )}
                       </div>
                       <div>
                         <select
                           className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary ${
-                            errors.projectType ? 'border-red-500' : 'border-gray-300'
+                            errors.projectType
+                              ? 'border-red-500'
+                              : 'border-gray-300'
                           }`}
                           {...register('projectType')}
                         >
-                          <option value="">Select Project Type</option>
-                          <option value="foundation">Foundation Construction</option>
-                          <option value="driveway">Driveway & Walkways</option>
-                          <option value="patio">Patio & Outdoor Spaces</option>
-                          <option value="decorative">Decorative Concrete</option>
-                          <option value="repair">Concrete Repair</option>
-                          <option value="consultation">Consultation</option>
+                          <option value=''>Select Project Type</option>
+                          <option value='foundation'>
+                            Foundation Construction
+                          </option>
+                          <option value='driveway'>Driveway & Walkways</option>
+                          <option value='patio'>Patio & Outdoor Spaces</option>
+                          <option value='decorative'>
+                            Decorative Concrete
+                          </option>
+                          <option value='repair'>Concrete Repair</option>
+                          <option value='consultation'>Consultation</option>
                         </select>
                         {errors.projectType && (
-                          <p className="text-red-500 text-sm mt-1">{errors.projectType.message}</p>
+                          <p className='text-red-500 text-sm mt-1'>
+                            {errors.projectType.message}
+                          </p>
                         )}
                       </div>
                     </div>
 
                     <div>
                       <Textarea
-                        placeholder="Tell us about your concrete project..."
+                        placeholder='Tell us about your concrete project...'
                         rows={6}
                         {...register('message')}
                         className={errors.message ? 'border-red-500' : ''}
                       />
                       {errors.message && (
-                        <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
+                        <p className='text-red-500 text-sm mt-1'>
+                          {errors.message.message}
+                        </p>
                       )}
                     </div>
 
                     <Button
-                      type="submit"
-                      size="lg"
-                      className="w-full"
+                      type='submit'
+                      size='lg'
+                      className='w-full'
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
-                      <Send className="ml-2 h-4 w-4" />
+                      <Send className='ml-2 h-4 w-4' />
                     </Button>
 
                     {submitMessage && (
-                      <p className="text-green-600 text-center font-medium">{submitMessage}</p>
+                      <p className='text-green-600 text-center font-medium'>
+                        {submitMessage}
+                      </p>
                     )}
 
                     {submitError && (
-                      <p className="text-red-600 text-center font-medium">{submitError}</p>
+                      <p className='text-red-600 text-center font-medium'>
+                        {submitError}
+                      </p>
                     )}
                   </form>
                 </CardContent>
@@ -239,36 +251,45 @@ export default function ContactPage() {
               animate={formInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="space-y-8">
+              <div className='space-y-8'>
                 <div>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-                  <p className="text-lg text-gray-600">
-                    Ready to transform your property with professional concrete construction? Contact us today to discuss your project and schedule a consultation.
+                  <h2 className='text-3xl font-bold text-gray-900 mb-4'>
+                    Get In Touch
+                  </h2>
+                  <p className='text-lg text-gray-600'>
+                    Ready to transform your property with professional concrete
+                    construction? Contact us today to discuss your project and
+                    schedule a consultation.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
                   {contactInfo.map((item, index) => (
                     <motion.div
                       key={item.title}
-                      className="flex items-start space-x-4"
+                      className='flex items-start space-x-4'
                       initial={{ opacity: 0, y: 20 }}
                       animate={formInView ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.5, delay: 0.1 * index }}
                     >
-                      <div className="flex-shrink-0">
-                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <item.icon className="h-6 w-6 text-primary" />
+                      <div className='flex-shrink-0'>
+                        <div className='w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center'>
+                          <item.icon className='h-6 w-6 text-primary' />
                         </div>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900">{item.title}</h3>
+                        <h3 className='font-semibold text-gray-900'>
+                          {item.title}
+                        </h3>
                         {item.link !== '#' ? (
-                          <a href={item.link} className="text-gray-600 hover:text-primary transition-colors">
+                          <a
+                            href={item.link}
+                            className='text-gray-600 hover:text-primary transition-colors'
+                          >
                             {item.value}
                           </a>
                         ) : (
-                          <p className="text-gray-600">{item.value}</p>
+                          <p className='text-gray-600'>{item.value}</p>
                         )}
                       </div>
                     </motion.div>
