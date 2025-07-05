@@ -15,14 +15,14 @@ const contactSchema = z.object({
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    
+
     // Validate the request body
     const validatedData = contactSchema.parse(body);
-    
+
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: 'Apex Concrete Website <noreply@apexconcrete.com>',
-      to: ['renzoherrera217@gmail.com'],
+      from: '${validatedData.email}', // Use the email from the form submission
+      to: ['apexconcrete726@gmail.com'],
       subject: `New Contact Form Submission - ${validatedData.projectType}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
@@ -54,27 +54,27 @@ export async function POST(request: NextRequest) {
       console.error('Resend error:', error);
       return NextResponse.json(
         { error: 'Failed to send email' },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
     return NextResponse.json(
       { message: 'Email sent successfully', id: data?.id },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error('Contact form error:', error);
-    
+
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { error: 'Invalid form data', details: error.errors },
-        { status: 400 }
+        { status: 400 },
       );
     }
-    
+
     return NextResponse.json(
       { error: 'Internal server error' },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
