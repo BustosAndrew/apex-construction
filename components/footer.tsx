@@ -129,42 +129,26 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          {/* <div>
+          <div>
             <h3 className='text-lg font-semibold mb-4'>Contact</h3>
             <div className='space-y-3'>
-              <div className='flex items-start space-x-3'>
-                <MapPin className='h-5 w-5 text-white mt-1' />
-                <div>
-                  <p className='text-gray-400'>123 Construction Ave</p>
-                  <p className='text-gray-400'>Building City, ST 12345</p>
-                </div>
-              </div>
-              <div className='flex items-center space-x-3'>
-                <Phone className='h-5 w-5 text-white' />
-                <a
-                  href='tel:+1-555-123-4567'
-                  className='text-gray-400 hover:text-white transition-colors'
-                >
-                  (555) 123-4567
-                </a>
-              </div>
               <div className='flex items-center space-x-3'>
                 <Mail className='h-5 w-5 text-white' />
                 <a
-                  href='mailto:renzoherrera217@gmail.com'
+                  href='mailto:apexconcrete726@gmail.com'
                   className='text-gray-400 hover:text-white transition-colors'
                 >
-                  renzoherrera217@gmail.com
+                  apexconcrete726@gmail.com
                 </a>
               </div>
             </div>
-          </div> */}
+          </div>
         </div>
 
         <div className='border-t border-gray-800 mt-12 pt-8 text-center text-gray-400'>
           <p>
-            &copy; 2024 Apex Concrete Construction Services. All rights
-            reserved.
+            &copy; {new Date().getFullYear()} Apex Concrete Construction
+            Services. All rights reserved.
           </p>
         </div>
       </div>
