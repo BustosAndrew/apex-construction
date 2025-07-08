@@ -28,21 +28,20 @@ const services = [
   },
   {
     icon: Palette,
-    title: 'Stamped Concrete',
+    title: 'Pavers',
     description:
-      'Stamped, stained, and polished concrete solutions that combine beauty with functionality.',
+      'Beautiful and durable paver solutions for driveways, patios, and walkways.',
   },
   {
     icon: Hammer,
-    title: 'Outdoor Entertainment Patio / Slabs',
-    description:
-      'Custom concrete patios and outdoor living spaces perfect for entertaining and relaxation.',
+    title: 'Outdoor Patio / Slabs',
+    description: 'Durable and stylish solutions for outdoor patios and slabs.',
   },
   {
     icon: Wrench,
-    title: 'Concrete Repair',
+    title: 'Decking & Fencing',
     description:
-      'Professional repair services to restore and extend the life of your existing concrete structures.',
+      'Professional installation and repair services for decks and fences, enhancing your outdoor living space.',
   },
   {
     icon: Lightbulb,

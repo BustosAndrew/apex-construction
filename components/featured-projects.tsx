@@ -54,7 +54,7 @@ export default function FeaturedProjects() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            Featured Concrete Projects
+            Featured Projects
           </motion.h2>
           <motion.p
             className='text-xl text-gray-300 max-w-2xl mx-auto'

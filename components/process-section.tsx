@@ -19,9 +19,9 @@ export default function ProcessSection() {
     },
     {
       image: '/pouring.jpg',
-      title: 'PRECISION CONCRETE POURING',
+      title: 'PROFESSIONAL EXCAVATION',
       description:
-        'Expert concrete mixing and pouring techniques using high-quality materials to ensure strength, durability, and proper curing.',
+        'Expert excavation techniques to prepare your site for a solid foundation.',
     },
     {
       image: '/stamped.jpg',
@@ -32,9 +32,9 @@ export default function ProcessSection() {
     {
       image:
         'https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
-      title: 'QUALITY ASSURANCE',
+      title: 'FENCING & DECKING',
       description:
-        'Comprehensive inspection and quality control to ensure your concrete meets our high standards and will last for decades.',
+        'Custom fencing and decking solutions for residential properties, including privacy fences and outdoor living spaces.',
     },
   ];
 
@@ -48,10 +48,10 @@ export default function ProcessSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            Professional Concrete Construction
+            Professional Residential Construction
           </motion.h2>
           <motion.h3
-            className='text-2xl md:text-3xl font-semibold text-primary'
+            className='text-2xl md:text-3xl font-semibold'
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
