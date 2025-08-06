@@ -21,9 +21,9 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      reply_to: 'apexconcrete726@gmail.com',
+      reply_to: `${validatedData.email}`,
       from: 'Apex Concrete Construction Services <noreply@apexconcrete.services>',
-      to: `${validatedData.email}`,
+      to: 'apexconcrete726@gmail.com',
       subject: `New Contact Form Submission - ${validatedData.projectType}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
