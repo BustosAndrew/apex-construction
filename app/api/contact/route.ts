@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: '${validatedData.email}', // Use the email from the form submission
+      from: `${validatedData.email}`, // Use the email from the form submission
       to: ['apexconcrete726@gmail.com'],
       subject: `New Contact Form Submission - ${validatedData.projectType}`,
       html: `
