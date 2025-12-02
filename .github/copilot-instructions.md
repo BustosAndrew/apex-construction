@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Next.js 16 (App Router) marketing website for a concrete construction company. Uses TypeScript, React 19, Tailwind CSS 3.x, shadcn/ui components, and Framer Motion animations.
+Next.js 16 (App Router) marketing website for a concrete construction company. Uses TypeScript, React 19, Tailwind CSS 4.x (CSS-first config), shadcn/ui components, and Framer Motion animations.
 
 ## Architecture
 
@@ -105,11 +105,11 @@ npm run lint   # ESLint check
 
 ## Design Tokens
 
-Colors use CSS variables defined in `app/globals.css`. Reference semantic tokens:
+Tailwind v4 uses CSS-first configuration in `app/globals.css`. Theme colors use CSS variables with `@theme` block:
 
 - `bg-primary`, `text-primary-foreground` for brand colors
 - `bg-muted`, `text-muted-foreground` for subdued elements
-- Dark mode supported via `.dark` class (configured but not actively used)
+- Dark mode supported via `.dark` class and `@custom-variant dark`
 
 ## Image Handling
 
